@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title> 卖家获取订单详情 - App.Seller.GetGoodsOrderInfo - 接口文档 - Online API Docs</title>
+
+    <meta name="description" content=" 用于卖家获取订单详情 -  卖家获取订单详情 - App.Seller.GetGoodsOrderInfo - 接口文档。基于PhalApi开源接口框架。">
+    <meta name="keywords" content=" 卖家获取订单详情,App.Seller.GetGoodsOrderInfo,接口文档,PhalApi">
+
+    <link rel="stylesheet" href="https://cdn.bootcss.com/semantic-ui/2.2.2/semantic.min.css">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/semantic-ui/2.2.2/components/table.min.css">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/semantic-ui/2.2.2/components/container.min.css">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/semantic-ui/2.2.2/components/message.min.css">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/semantic-ui/2.2.2/components/label.min.css">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+
+    <script src="/appapi/static/jquery.min.js"></script>
+    <script src="/appapi/static/jquery.cookie.min.js"></script>
+
+    <style>
+        #json_output pre span {
+            white-space: normal;
+            word-break: break-all;
+        }
+    </style>
+</head>
+
+<body>
+  <div class="ui fixed inverted menu blue">
+    <div class="ui container">
+      <a href="/" class="header item">
+        <img class="logo" alt="phalapi" src="/appapi/phalapi_logo.png">
+        接口文档      </a>
+      
+          <a href="/" class="item">Home</a>
+      	  <a href="/appapi/docs.php" class="item"><i class="globe icon"></i>API Docs</a>
+     	 <a href="http://docs.phalapi.net/#/v2.0/" class="item" target="_blank"><i class="file alternate outline icon"></i> Dev Docs</a>
+
+         <div class="item">
+             <div class="ui form">
+             <form action="/appapi/docs.php?search=k" method="get" target="_blank">
+                 <input type="text" name="keyword" placeholder="Search API" value="">
+             </form>
+             </div>
+         </div>
+         
+     <div class="right menu">
+         <div class="ui dropdown item">
+         Language <i class="dropdown icon"></i>
+          <div class="menu">
+              <a class="item" href="/appapi/docs.php?language=zh_cn" >简体中文</a>
+              <a class="item" href="/appapi/docs.php?language=en" >English</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+<div class="row" style="margin-top: 60px;" ></div>
+
+<div class="row" style="margin-top: 60px;" ></div>
+
+    <div class="ui text container" style="max-width: none !important;">
+        <div class="ui floating message">
+
+    <h2 class="ui header">
+      <i class="settings icon"></i>
+      <div class="content">
+        App.Seller.GetGoodsOrderInfo                <div class="sub header">
+             卖家获取订单详情        </div>
+      </div>
+    </h2>
+
+            <h4><i class="linkify in alternate icon"></i>API Url：http://127.0.0.1:8080/appapi/?s=App.Seller.GetGoodsOrderInfo</h4>
+
+            <div class="ui raised segment">
+                <span class="ui blue ribbon label">Request Method&nbsp; GET/POST</span>
+                <div class="ui message">
+                <p>API Description： 用于卖家获取订单详情</p>
+                </div>
+            </div>
+
+            <h3><i class="sign in alternate icon"></i>API Parameters</h3>
+            <table class="ui red celled striped table" >
+                <thead>
+                    <tr><th>Parameter Name</th><th>Type</th><th>Is Required</th><th>Default</th><th>Note</th><th>Description</th></tr>
+                </thead>
+                <tbody>
+<tr><td>uid</td><td>int</td><td>Optional</td><td></td><td>min: 1</td><td>用户ID</td></tr>
+<tr><td>token</td><td>string</td><td>Optional</td><td></td><td></td><td>用户token</td></tr>
+<tr><td>orderid</td><td>int</td><td>Optional</td><td></td><td></td><td>订单id</td></tr>
+<tr><td>time</td><td>string</td><td>Optional</td><td></td><td></td><td>时间戳</td></tr>
+<tr><td>sign</td><td>string</td><td>Optional</td><td></td><td></td><td>签名字符串</td></tr>
+                </tbody>
+            </table>
+            <h3><i class="sign out alternate icon"></i>Response Result</h3>
+            <table class="ui green celled striped table" >
+                <thead>
+                    <tr><th>Parameter Name</th><th>Type</th><th>Description</th></tr>
+                </thead>
+                <tbody>
+                
+<tr><td>code</td><td>int</td><td>状态码，0表示成功</td></tr><tr><td>msg</td><td>string</td><td>提示信息</td></tr><tr><td>info</td><td>array</td><td>返回信息</td></tr><tr><td>info[0].order_info</td><td>array</td><td>订单信息</td></tr><tr><td>info[0].order_info['address_format']</td><td>array</td><td>订单地址格式化</td></tr><tr><td>info[0].order_info['spec_thumb_format']</td><td>array</td><td>订单规格格式化</td></tr><tr><td>info[0].order_info['type_name']</td><td>array</td><td>订单付款方式</td></tr><tr><td>info[0].shop_info</td><td>array</td><td>店铺信息</td></tr><tr><td>info[0].express_info</td><td>array</td><td>物流信息</td></tr><tr><td>info[0].express_info['state_name']</td><td>array</td><td>物流状态</td></tr><tr><td>info[0].express_info['state_desc']</td><td>array</td><td>物流说明</td></tr>            </tbody>
+        </table>            <h3 id="ret_code_list_id"><i class="bell icon"></i>Error List</h3>
+            <table class="ui red celled striped table" >
+                <thead>
+                    <tr><th>Error Status</th><th>Error Description</th>
+                </thead>
+                <tbody><tr><td>400</td><td>表示客户端参数错误</td></tr><tr><td>404</td><td>表示接口服务不存在</td></tr><tr><td>500</td><td>表示服务端内部错误</td></tr>            </tbody>
+        </table>
+<h3>
+    <i class="bug icon"></i>Test Online &nbsp;&nbsp;
+</h3>
+
+
+<table class="ui red celled striped table" >
+    <thead>
+        <tr><th width="25%">Parameter</th><th width="10%">Is Required</th><th width="65%">Value</th></tr>
+    </thead>
+    <tbody id="params">
+        <tr>
+            <td>service</td>
+            <td><font color="red">Required</font></td>
+            <td><div class="ui fluid input disabled"><input name="service" data-source="get" value="App.Seller.GetGoodsOrderInfo" style="width:100%;" class="C_input" id="service" /></div></td>
+        </tr>
+        <tr>
+            <td>uid</td>
+            <td>Optional</td>
+            <td><div class="ui fluid input"><input name="uid" value="" data-source="" placeholder="用户ID" style="width:100%;" class="C_input" type="text" /></div></td>
+        </tr>        <tr>
+            <td>token</td>
+            <td>Optional</td>
+            <td><div class="ui fluid input"><input name="token" value="" data-source="" placeholder="用户token" style="width:100%;" class="C_input" type="text" /></div></td>
+        </tr>        <tr>
+            <td>orderid</td>
+            <td>Optional</td>
+            <td><div class="ui fluid input"><input name="orderid" value="" data-source="" placeholder="订单id" style="width:100%;" class="C_input" type="text" /></div></td>
+        </tr>        <tr>
+            <td>time</td>
+            <td>Optional</td>
+            <td><div class="ui fluid input"><input name="time" value="" data-source="" placeholder="时间戳" style="width:100%;" class="C_input" type="text" /></div></td>
+        </tr>        <tr>
+            <td>sign</td>
+            <td>Optional</td>
+            <td><div class="ui fluid input"><input name="sign" value="" data-source="" placeholder="签名字符串" style="width:100%;" class="C_input" type="text" /></div></td>
+        </tr>    </tbody>
+</table>
+<div style="display: flex;align-items:center;">
+    <!--<select name="request_type" style="font-size: 14px; padding: 2px;">
+        <option value="POST">POST</option>
+        <option value="GET">GET</option>
+    </select>-->
+<!--
+接口链接：&nbsp;<input name="request_url" value="{$url}" style="width:500px; height:24px; line-height:18px; font-size:13px;position:relative; padding-left:5px;margin-left: 10px"/>
+    <input type="submit" name="submit" value="发送" id="submit" style="font-size:14px;line-height: 20px;margin-left: 10px " class="ui green button" />
+-->
+
+</div>
+
+<div class="ui fluid action input">
+      <input placeholder="请求的接口链接" type="text" name="request_url" value="http://127.0.0.1:8080/appapi/" >
+      <button class="ui button blue" id="submit" >Request API</button>
+</div>
+
+<div class="ui blue message" id="json_output" style="overflow: auto;">
+</div>
+
+<h3><i class="code icon"></i>Client Request Demo</h3>
+
+
+<div class="ui tab segment active" data-tab="json">
+    <div class="ui top attached tabular menu">
+        <a class="active  item" data-tab="datatabjson">json demo</a>
+    </div>
+
+    <div class="ui bottom attached active  tab segment" data-tab="datatabjson"><pre><code># 暂无示例，可添加示例文件：./src/view/docs/demos/App.Seller.GetGoodsOrderInfo.json</code></pre></div>
+</div>
+
+<!-- 代码高亮 -->
+<link rel="stylesheet" href="/appapi/static/highlight.min.css">
+<script src="/appapi/static/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+        <div class="ui blue message">
+          <strong>Tips: </strong> This API Document will be generated automately by PHP code and comments. More detail please visit <a href="http://docs.phalapi.net/#/v2.0/api-docs" target="_blank">Docs</a>.
+        </div>
+        </div>
+
+    </div>
+
+<!-- tag -->
+<script src="https://cdn.bootcss.com/semantic-ui/2.2.2/semantic.min.js" ></script>
+<script src="https://cdn.bootcss.com/semantic-ui/2.2.2/components/tab.js"></script>
+  <div class="ui inverted vertical footer segment" style="margin-top:30px; background: #1B1C1D none repeat scroll 0% 0%;" >
+    <div class="ui container">
+      <div class="ui stackable inverted divided equal height stackable grid">
+        <div class="ten wide column centered">
+            <div class="column" align="center" >
+                <img src="/appapi/phalapi_logo.png" alt="PhalApi">
+            </div>
+            <div class="column" align="center">
+                <p>
+                    <strong>A PHP framework foucs on API fast development.  © 2015-2024 Powered  By </strong>
+
+                   
+                </p>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <style type="text/css">
+    #json_output {
+        pre span {
+            white-space: normal;
+            word-break: break-all;
+        }
+    }
+  </style>
+
+    <script type="text/javascript">
+        let elem = document.getElementById('service');
+        let sep = '_';
+        let service = elem ? elem.value + sep : sep;
+
+        function getData(apiMethod) {
+            apiMethod = apiMethod ? apiMethod : 'POST';
+
+            var data = new FormData();
+            var param = [];
+            $("td input").each(function(index,e) {
+                if ($.trim(e.value)){
+                    if (e.type != 'file'){
+                        if ($(e).data('source') == 'get' || apiMethod == 'GET') {
+                            param.push(e.name + '=' + encodeURIComponent(e.value));
+                        } else {
+                            data.append(e.name, e.value);
+                        }
+
+                        if (e.name !== "service" && e.value !== '') {
+                            if (window.localStorage) {
+                                localStorage.setItem(service + e.name, e.value);
+                            } else {
+                                $.cookie(service + e.name, e.value, {expires: 30});
+                            }
+                        }
+                    } else{
+                        var files = e.files;
+                        if (files.length == 1){
+                            data.append(e.name, files[0]);
+                        } else{
+                            for (var i = 0; i < files.length; i++) {
+                                data.append(e.name + '[]', files[i]);
+                            }
+                        }
+                    }
+                }
+            });
+            param = param.join('&');
+            return {param:param, data:data};
+        }
+        
+        $(function(){
+            $("#json_output").hide();
+            $("#submit").on("click",function(){
+                $("#json_output").html('<div class="ui active inverted dimmer"><div class="ui text loader">接口请求中……</div></div>');
+                $("#json_output").show();
+
+                var apiMethod = 'POST';
+
+                var data = getData(apiMethod);
+                var url_arr = $("input[name=request_url]").val().split('?');
+                var url = url_arr.shift();
+                var param = url_arr.join('?');
+                param = param.length > 0 ? param + '&' + data.param : data.param;
+                url = url + '?' + param;
+                $.ajax({
+                    url: url,
+                    type: apiMethod,
+                    data: apiMethod == 'GET' ? '' : data.data,
+                    cache: false,
+                    processData: false,
+                    contentType: false,
+                    success:function(res,status,xhr){
+                        // console.log(xhr);
+                        var statu = xhr.status + ' ' + xhr.statusText;
+                        var header = xhr.getAllResponseHeaders();
+                        var json_text = JSON.stringify(res, null, 4);    // 缩进4个空格
+                        if (hljs) {
+                            // var hightLightCode = hljs.highlightAuto(json_text);
+                            var hightLightCode = hljs.highlight('json', json_text);
+                            json_text = hightLightCode.value;
+                          }
+
+                        $("#json_output").html('<pre>' + statu + '<br/>' + header + '<br/>' + json_text + '</pre>');
+                        $("#json_output").show();
+                    },
+                    error:function(error){
+                        $("#json_output").html('接口请求失败：' + error);
+                    }
+                })
+            })
+
+            fillHistoryData();
+
+            checkLastestVersion();
+
+            // 选项卡
+            $('.tabular.menu .item').tab();
+
+        	$('.ui.dropdown').dropdown({
+        	    // you can use any ui transition
+        	    transition: 'drop'
+        	  });
+        })
+
+        // 填充历史数据
+        function fillHistoryData() {
+            $("td input").each(function(index,e) {
+                let cookie_value;
+                if (window.localStorage) {
+                    cookie_value = localStorage.getItem(service + e.name);
+                } else {
+                    cookie_value = $.cookie(service + e.name);
+                }
+                if (e.name !== "service" && cookie_value !== "" && cookie_value !== undefined) {
+                    e.value = cookie_value;
+                }
+            });
+        }
+
+        // 检测最新版本
+        function checkLastestVersion() {
+                $.ajax({
+                    url:'https://www.phalapi.net/check_lastest_version.php',
+                    type:'get',
+                    data:{version : '2.21.6'},
+                    success:function(res,status,xhr){
+                        if (!res.ret || res.ret != 200) {
+                            return;
+                        }
+                        if (res.data.need_upgrade >= 0) {
+                            return;
+                        }          
+
+                        $('#version_update').html('&nbsp; | &nbsp; <a target="_blank" href=" ' + res.data.url + ' "><strong>免费升级到 PhalApi ' + res.data.version + '</strong></a>');              
+                    },
+                    error:function(error){
+                        console.log(error)
+                    }
+                })
+
+        }
+    </script>
+
+</body>
+</html>
