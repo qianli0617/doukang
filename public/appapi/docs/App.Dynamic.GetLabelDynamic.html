@@ -2,10 +2,10 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title> 获取邀请开关、邀请码必填开关、openinstall开关以及用户是否设置了邀请码 - App.Agent.CheckAgent - 接口文档 - Online API Docs</title>
+    <title> 获取热门话题下的动态 - App.Dynamic.GetLabelDynamic - 接口文档 - Online API Docs</title>
 
-    <meta name="description" content=" 用于获取邀请开关、邀请码必填开关、openinstall开关以及用户是否设置了邀请码 -  获取邀请开关、邀请码必填开关、openinstall开关以及用户是否设置了邀请码 - App.Agent.CheckAgent - 接口文档。基于PhalApi开源接口框架。">
-    <meta name="keywords" content=" 获取邀请开关、邀请码必填开关、openinstall开关以及用户是否设置了邀请码,App.Agent.CheckAgent,接口文档,PhalApi">
+    <meta name="description" content=" 用于获取热门话题下的动态 -  获取热门话题下的动态 - App.Dynamic.GetLabelDynamic - 接口文档。基于PhalApi开源接口框架。">
+    <meta name="keywords" content=" 获取热门话题下的动态,App.Dynamic.GetLabelDynamic,接口文档,PhalApi">
 
     <link rel="stylesheet" href="https://cdn.bootcss.com/semantic-ui/2.2.2/semantic.min.css">
     <link rel="stylesheet" href="https://cdn.bootcss.com/semantic-ui/2.2.2/components/table.min.css">
@@ -67,17 +67,17 @@
     <h2 class="ui header">
       <i class="settings icon"></i>
       <div class="content">
-        App.Agent.CheckAgent                <div class="sub header">
-             获取邀请开关、邀请码必填开关、openinstall开关以及用户是否设置了邀请码        </div>
+        App.Dynamic.GetLabelDynamic                <div class="sub header">
+             获取热门话题下的动态        </div>
       </div>
     </h2>
 
-            <h4><i class="linkify in alternate icon"></i>API Url：http://127.0.0.1:8080/appapi/?s=App.Agent.CheckAgent</h4>
+            <h4><i class="linkify in alternate icon"></i>API Url：http://127.0.0.1:8080/appapi/?s=App.Dynamic.GetLabelDynamic</h4>
 
             <div class="ui raised segment">
                 <span class="ui blue ribbon label">Request Method&nbsp; GET/POST</span>
                 <div class="ui message">
-                <p>API Description： 用于获取邀请开关、邀请码必填开关、openinstall开关以及用户是否设置了邀请码</p>
+                <p>API Description： 用于获取热门话题下的动态</p>
                 </div>
             </div>
 
@@ -88,7 +88,9 @@
                 </thead>
                 <tbody>
 <tr><td>uid</td><td>int</td><td>Optional</td><td></td><td></td><td>用户ID</td></tr>
-<tr><td>token</td><td>string</td><td>Optional</td><td></td><td></td><td>用户token</td></tr>
+<tr><td>token</td><td>string</td><td>Optional</td><td></td><td></td><td>用户Token</td></tr>
+<tr><td>labelid</td><td>int</td><td><font color="red">Required</font></td><td></td><td></td><td>话题标签ID</td></tr>
+<tr><td>p</td><td>int</td><td>Optional</td><td>1</td><td>min: 1</td><td>页数</td></tr>
                 </tbody>
             </table>
             <h3><i class="sign out alternate icon"></i>Response Result</h3>
@@ -98,7 +100,7 @@
                 </thead>
                 <tbody>
                 
-<tr><td>code</td><td>int</td><td>操作码，0表示成功</td></tr><tr><td>info</td><td>array</td><td></td></tr><tr><td>info[0].</td><td>int</td><td>openinstall_switch openinstall开关 1开 0关</td></tr><tr><td>msg</td><td>string</td><td>提示信息</td></tr>            </tbody>
+<tr><td>code</td><td>int</td><td>操作码，0表示成功</td></tr><tr><td>msg</td><td>string</td><td>提示信息</td></tr>            </tbody>
         </table>            <h3 id="ret_code_list_id"><i class="bell icon"></i>Error List</h3>
             <table class="ui red celled striped table" >
                 <thead>
@@ -119,7 +121,7 @@
         <tr>
             <td>service</td>
             <td><font color="red">Required</font></td>
-            <td><div class="ui fluid input disabled"><input name="service" data-source="get" value="App.Agent.CheckAgent" style="width:100%;" class="C_input" id="service" /></div></td>
+            <td><div class="ui fluid input disabled"><input name="service" data-source="get" value="App.Dynamic.GetLabelDynamic" style="width:100%;" class="C_input" id="service" /></div></td>
         </tr>
         <tr>
             <td>uid</td>
@@ -128,7 +130,15 @@
         </tr>        <tr>
             <td>token</td>
             <td>Optional</td>
-            <td><div class="ui fluid input"><input name="token" value="" data-source="" placeholder="用户token" style="width:100%;" class="C_input" type="text" /></div></td>
+            <td><div class="ui fluid input"><input name="token" value="" data-source="" placeholder="用户Token" style="width:100%;" class="C_input" type="text" /></div></td>
+        </tr>        <tr>
+            <td>labelid</td>
+            <td><font color="red">Required</font></td>
+            <td><div class="ui fluid input"><input name="labelid" value="" data-source="" placeholder="话题标签ID" style="width:100%;" class="C_input" type="text" /></div></td>
+        </tr>        <tr>
+            <td>p</td>
+            <td>Optional</td>
+            <td><div class="ui fluid input"><input name="p" value="1" data-source="" placeholder="页数" style="width:100%;" class="C_input" type="text" /></div></td>
         </tr>    </tbody>
 </table>
 <div style="display: flex;align-items:center;">
@@ -159,7 +169,7 @@
         <a class="active  item" data-tab="datatabjson">json demo</a>
     </div>
 
-    <div class="ui bottom attached active  tab segment" data-tab="datatabjson"><pre><code># 暂无示例，可添加示例文件：./src/view/docs/demos/App.Agent.CheckAgent.json</code></pre></div>
+    <div class="ui bottom attached active  tab segment" data-tab="datatabjson"><pre><code># 暂无示例，可添加示例文件：./src/view/docs/demos/App.Dynamic.GetLabelDynamic.json</code></pre></div>
 </div>
 
 <!-- 代码高亮 -->
